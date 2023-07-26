@@ -38,5 +38,12 @@ class Easy {
         return (str1.substring(0, l1))
     }
 
-
+    fun kidsWithCandies(candies: IntArray, extraCandies: Int): List<Boolean>{
+        val max = candies.max()
+        val maxList = mutableListOf<Boolean>()
+        for (candy in candies){
+            if (extraCandies + candy >= max) maxList.add(true) else maxList.add(false)
+        }
+        return maxList
+    }
 }
