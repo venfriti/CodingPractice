@@ -46,4 +46,25 @@ class Easy {
         }
         return maxList
     }
+
+//    fun twoSum(nums: IntArray, target: Int): IntArray {
+//        val x = nums.size; var i = 0; var j = 0;
+//        var z = mutableListOf<Int>()
+//        for (num in nums){
+//            for (number in nums){
+//                if (num + number == target) return intArrayOf(num, number)
+//            }
+//        }
+//        while (i < x) {
+//            while (j < x){
+//                if (nums[i] + nums[j] == target) {
+//                    z.add(i)
+//                    z.add(j)
+//                }
+//                j++
+//            }
+//            i++
+//        }
+//        return z.toIntArray()
+//    }
 }
