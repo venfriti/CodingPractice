@@ -37,4 +37,14 @@ class HackerRank {
         }
         return abs(rightDiagonal - leftDiagonal)
     }
+
+    fun countingSort(arr: Array<Int>): Array<Int> {
+        val max = arr.max()
+        val countingArray = Array(max + 1) { 0 }
+
+        for (num in arr){
+            countingArray[num] += 1
+        }
+        return countingArray
+    }
 }
