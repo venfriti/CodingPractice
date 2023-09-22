@@ -19,6 +19,14 @@ class HackerRank {
         print("$minSum $maxSum")
     }
 
+    fun timeConversion(s: String) : String {
+        val inputTime = java.text.SimpleDateFormat("hh:mm:ssa")
+        val outputTime = java.text.SimpleDateFormat("HH:mm:ss")
+        val t = inputTime.parse(s)
+        return(outputTime.format(t))
+
+    }
+
     fun lonelyInteger(array: Array<Int>){
         var lonelyInteger = 0
         for (x in array){
@@ -47,4 +55,57 @@ class HackerRank {
         }
         return countingArray
     }
+
+
+    fun maximizeUpperLeftQuadrantSum(matrix: Array<Array<Int>>): Int {
+        val n = matrix.size
+        val halfN = n / 2
+
+        // Calculate the sum of all elements in the matrix
+        var totalSum = 0
+        for (i in 0 until n) {
+            for (j in 0 until n) {
+                totalSum += matrix[i][j]
+            }
+        }
+
+        // Calculate the sum of the elements in the upper left quadrant
+        var upperLeftSum = 0
+        for (i in 0 until halfN) {
+            for (j in 0 until halfN) {
+                upperLeftSum += matrix[i][j]
+            }
+        }
+
+        // Calculate the sum of the elements in the upper right quadrant
+        var upperRightSum = 0
+        for (i in 0 until halfN) {
+            for (j in halfN until n) {
+                upperRightSum += matrix[i][j]
+            }
+        }
+
+        // Calculate the sum of the elements in the lower left quadrant
+        var lowerLeftSum = 0
+        for (i in halfN until n) {
+            for (j in 0 until halfN) {
+                lowerLeftSum += matrix[i][j]
+            }
+        }
+
+        // Calculate the sum of the elements in the lower right quadrant
+        var lowerRightSum = 0
+        for (i in halfN until n) {
+            for (j in halfN until n) {
+                lowerRightSum += matrix[i][j]
+            }
+        }
+
+        // Find the maximum sum among all possible combinations of row and column reversals
+        val maxSum = maxOf(upperLeftSum, upperRightSum, lowerLeftSum, lowerRightSum)
+
+        // The maximum sum of the upper left quadrant is the total sum minus the maximum sum of the other quadrants
+        return totalSum - maxSum
+    }
 }
+
