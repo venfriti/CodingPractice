@@ -27,14 +27,6 @@ class HackerRank {
 
     }
 
-    fun lonelyInteger(array: Array<Int>){
-        var lonelyInteger = 0
-        for (x in array){
-            lonelyInteger = lonelyInteger xor x
-        }
-        print(lonelyInteger)
-    }
-
     fun diagonalDifference(arr: Array<Array<Int>>): Int {
         val size = arr.size
         var leftDiagonal = 0

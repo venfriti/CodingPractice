@@ -14,5 +14,5 @@ fun main(args: Array<String>) {
 //    println("Maximum sum of upper left quadrant: $result")
 //    val checker = hackerRank.timeConversion("05:53:56PM")
 //    println(checker)
-    println(matchingArray[0])
+    println(lonelyInteger(test))
 }
