@@ -56,7 +56,6 @@ class HackerRank {
         return countingArray
     }
 
-
     fun maximizeUpperLeftQuadrantSum(matrix: Array<Array<Int>>): Int {
         val n = matrix.size
         val halfN = n / 2
